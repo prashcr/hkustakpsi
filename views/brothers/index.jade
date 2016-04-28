@@ -1,0 +1,16 @@
+extends ../layout
+
+mixin brother(brother)
+  .col-xs-6.col-sm-3.col-lg-2
+    a(href='/brothers/' + brother.id)
+      .panel.panel-primary.brother-panel
+        .panel-heading= brother.name
+        .panel-body.text-center
+          if brother.pic
+            img.img-responsive.center-block(src=brother.pic[0].url)
+
+block content
+  h1 Actives
+  .row
+    each brother in brothers
+      +brother(brother)

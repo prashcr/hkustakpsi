@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h2= brother.name
+  h4= brother.program
+  p= brother.intro
+  a.fa.fa-fw.fa-linkedin(href=brother.linkedin target='_blank')
+  br
+  if brother.pic
+    img(src=brother.pic[0].url)
